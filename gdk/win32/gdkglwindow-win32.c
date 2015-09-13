@@ -23,7 +23,7 @@
 #include "gdkglwin32.h"
 #include "gdkglprivate-win32.h"
 #include "gdkglconfig-win32.h"
-#include "gdkglcontext-win32.h"
+#include "gdkglextcontext-win32.h"
 #include "gdkglwindow-win32.h"
 
 static GdkGLContext           *_gdk_win32_gl_window_impl_create_gl_context  (GdkGLWindow  *glwindow,
@@ -268,7 +268,7 @@ _gdk_win32_gl_window_impl_create_gl_context (GdkGLWindow  *glwindow,
   GdkGLContext *glcontext;
   GdkGLContextImpl *impl;
 
-  glcontext = g_object_new(GDK_TYPE_WIN32_GL_CONTEXT, NULL);
+  glcontext = g_object_new(GDK_TYPE_WIN32_GLEXT_CONTEXT, NULL);
 
   g_return_val_if_fail(glcontext != NULL, NULL);
 

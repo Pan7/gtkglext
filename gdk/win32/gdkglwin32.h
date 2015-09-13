@@ -37,7 +37,7 @@
 #define __GDKGLWIN32_H_INSIDE__
 
 #include <gdk/win32/gdkwin32glconfig.h>
-#include <gdk/win32/gdkwin32glcontext.h>
+#include <gdk/win32/gdkwin32glextcontext.h>
 #include <gdk/win32/gdkwin32glquery.h>
 #include <gdk/win32/gdkwin32glwindow.h>
 

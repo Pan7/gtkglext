@@ -21,6 +21,7 @@
 #endif /* HAVE_CONFIG_H */
 
 #include "gtkglprivate.h"
+#include "gdkglextcontext.h"
 #include "gtkglwidget.h"
 
 #ifdef G_OS_WIN32
@@ -334,7 +335,7 @@ gtk_widget_set_gl_capability (GtkWidget    *widget,
   private->glconfig = glconfig;
   g_object_ref (G_OBJECT (private->glconfig));
 
-  if (share_list != NULL && GDK_IS_GL_CONTEXT (share_list))
+  if (share_list != NULL && GDK_IS_GLEXT_CONTEXT (share_list))
     {
       private->share_list = share_list;
       g_object_ref (G_OBJECT (private->share_list));
@@ -456,7 +457,7 @@ gtk_widget_create_gl_context (GtkWidget    *widget,
    * Create OpenGL rendering context.
    */
 
-  glcontext = gdk_gl_context_new (gldrawable,
+  glcontext = gdk_glext_context_new (gldrawable,
                                   share_list,
                                   direct,
                                   render_type);
@@ -531,7 +532,7 @@ gtk_widget_begin_gl(GtkWidget *widget)
   glcontext = gtk_widget_get_gl_context (widget);
   glwindow  = gtk_widget_get_gl_window (widget);
 
-  return gdk_gl_context_make_current(glcontext, GDK_GL_DRAWABLE (glwindow), GDK_GL_DRAWABLE (glwindow));
+  return gdk_glext_context_make_current(glcontext, GDK_GL_DRAWABLE (glwindow), GDK_GL_DRAWABLE (glwindow));
 }
 
 void
@@ -551,5 +552,5 @@ gtk_widget_end_gl(GtkWidget *widget, gboolean do_swap)
         glFlush ();
     }
 
-  gdk_gl_context_release_current();
+  gdk_glext_context_release_current();
 }

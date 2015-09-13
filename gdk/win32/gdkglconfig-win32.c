@@ -89,7 +89,7 @@ gdk_gl_config_parse_attrib_list (const int             *attrib_list,
                                  PIXELFORMATDESCRIPTOR *pfd)
 {
   int *p;
-  int i;
+  gsize i;
   gboolean buffer_size_is_specified = FALSE;
   BYTE buffer_size;
   int layer_plane;
