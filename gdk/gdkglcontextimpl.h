@@ -16,19 +16,19 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA.
  */
 
-#ifndef __GDK_GL_CONTEXT_IMPL_H__
-#define __GDK_GL_CONTEXT_IMPL_H__
+#ifndef __GDK_GLEXT_CONTEXT_IMPL_H__
+#define __GDK_GLEXT_CONTEXT_IMPL_H__
 
 #include <gdk/gdkgl.h>
 
 G_BEGIN_DECLS
 
-#define GDK_TYPE_GL_CONTEXT_IMPL            (gdk_gl_context_impl_get_type ())
-#define GDK_GL_CONTEXT_IMPL(object)         (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_GL_CONTEXT_IMPL, GdkGLContextImpl))
-#define GDK_GL_CONTEXT_IMPL_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GDK_TYPE_GL_CONTEXT_IMPL, GdkGLContextImplClass))
-#define GDK_IS_GL_CONTEXT_IMPL(object)      (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_GL_CONTEXT_IMPL))
-#define GDK_IS_GL_CONTEXT_IMPL_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GDK_TYPE_GL_CONTEXT_IMPL))
-#define GDK_GL_CONTEXT_IMPL_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_GL_CONTEXT_IMPL, GdkGLContextImplClass))
+#define GDK_TYPE_GLEXT_CONTEXT_IMPL            (gdk_glext_context_impl_get_type ())
+#define GDK_GLEXT_CONTEXT_IMPL(object)         (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_GLEXT_CONTEXT_IMPL, GdkGLContextImpl))
+#define GDK_GLEXT_CONTEXT_IMPL_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GDK_TYPE_GLEXT_CONTEXT_IMPL, GdkGLContextImplClass))
+#define GDK_IS_GLEXT_CONTEXT_IMPL(object)      (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_GLEXT_CONTEXT_IMPL))
+#define GDK_IS_GLEXT_CONTEXT_IMPL_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GDK_TYPE_GLEXT_CONTEXT_IMPL))
+#define GDK_GLEXT_CONTEXT_IMPL_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_GLEXT_CONTEXT_IMPL, GdkGLContextImplClass))
 
 typedef struct _GdkGLContextImpl
 {
@@ -54,8 +54,8 @@ typedef struct _GdkGLContextImplClass
 
 } GdkGLContextImplClass;
 
-GType gdk_gl_context_impl_get_type (void);
+GType gdk_glext_context_impl_get_type (void);
 
 G_END_DECLS
 
-#endif /* __GDK_GL_CONTEXT_IMPL_H__ */
+#endif /* __GDK_GLEXT_CONTEXT_IMPL_H__ */
